@@ -1,7 +1,6 @@
-
 import React from 'react';
 
-export type Page = 'Home' | 'Services' | 'ServiceDetail' | 'Pricing' | 'Portfolio' | 'About' | 'Testimonials' | 'Contact' | 'Blog' | 'BlogPost' | 'PrivacyPolicy' | 'TermsOfService' | 'Careers' | 'CaseStudy' | 'ProjectBrief';
+export type Page = 'Home' | 'Services' | 'ServiceDetail' | 'Pricing' | 'Portfolio' | 'About' | 'Testimonials' | 'Contact' | 'Blog' | 'BlogPost' | 'PrivacyPolicy' | 'TermsOfService' | 'Careers' | 'CaseStudy' | 'ProjectBrief' | 'Visibility';
 
 export type Theme = 'light' | 'dark';
 
