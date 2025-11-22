@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet';
 import { ChevronDownIcon, SparklesIcon, BrainIcon, UsersIcon, SpinnerIcon, ZapIcon } from './Icons';
 import AnimatedCardBackground from './AnimatedCardBackground';
 
@@ -282,8 +283,43 @@ const AboutPage: React.FC = () => {
   ];
   
   const displayedFaqs = showAllFaqs ? faqs : faqs.slice(0, 5);
-
   return (
+    <>
+      {/* SEO & Metadata */}
+      <Helmet>
+        <title>About ProbSolv | Digital Agency for AI & Web Development</title>
+        <meta name="description" content="Learn about ProbSolv, a cutting-edge digital agency specializing in web development, AI automation, and digital solutions. Discover our mission, philosophy, and approach to delivering exceptional digital experiences." />
+        <meta name="keywords" content="Digital Agency, Web Development, AI Automation, SEO Services, UI/UX Design, ProbSolv, Digital Solutions" />
+        <link rel="canonical" href="https://probsolvtech.agency/about" />
+        {/* OpenGraph */}
+        <meta property="og:title" content="About ProbSolv | AI & Web Development Agency" />
+        <meta property="og:description" content="ProbSolv is a digital agency specializing in web development, AI automation, and growth-focused digital solutions." />
+        <meta property="og:url" content="https://probsolvtech.agency/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://probsolvtech.agency/og-image-about.jpg" />
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About ProbSolv | Digital Agency" />
+        <meta name="twitter:description" content="Discover ProbSolv: Web development, AI automation, and innovative digital solutions for growth-oriented businesses." />
+        <meta name="twitter:image" content="https://probsolvtech.agency/og-image-about.jpg" />
+        {/* JSON-LD Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "ProbSolv",
+            "url": "https://probsolvtech.agency",
+            "logo": "https://probsolvtech.agency/logo.png",
+            "sameAs": [
+              "https://www.facebook.com/ProbSolv",
+              "https://www.instagram.com/ProbSolv",
+              "https://twitter.com/ProbSolv"
+            ],
+            "description": "ProbSolv is a digital agency specializing in web development, AI automation, and digital growth solutions."
+          })}
+        </script>
+      </Helmet>
+ 
     <div className="pt-24 sm:pt-32 pb-16 sm:pb-20 container mx-auto px-4 sm:px-6 lg:px-8">
       <div ref={titleRef} className={`text-center max-w-3xl mx-auto mb-16 will-change-[transform,opacity] ${titleInView ? 'animate-fade-in-up' : 'opacity-0'}`}>
         <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-text_light dark:text-text_dark">About ProbSolv</h1>
@@ -291,7 +327,6 @@ const AboutPage: React.FC = () => {
           We are a team of passionate designers, developers, and strategists dedicated to building the future of digital experiences.
         </p>
       </div>
-
       <div className="max-w-4xl mx-auto">
         <div className="space-y-12">
             <div ref={missionRef} className={`will-change-[transform,opacity] ${missionInView ? 'animate-fade-in-up' : 'opacity-0'}`}>
